@@ -1,24 +1,37 @@
-# README
+# アプリケーション名
+amatsu
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリケーション概要
+amatsuとは、派遣業界に特化した求人SNSである。<br>
+既存のアプリケーションと比較した独自性は以下の2点である。<br><br>
+①派遣業界に特化していること。<br>
+②求人サイトではなく、求人SNSであること。<br><br>
+これらの特徴によって、派遣会社の費用を最小限に抑え、<br>売上を最大化することを目的とする。
 
-Things you may want to cover:
+# URL
 
-* Ruby version
+# テスト用アカウント
 
-* System dependencies
+# 利用方法
+## 案件投稿
 
-* Configuration
+## フォローする
 
-* Database creation
+# アプリケーションを作成した背景
+前職でのDX商材のカスタマーサクセス経験によって、派遣会社が超薄利多売モデルであることを認知することになった。<br>この課題を分析した結果、案件登録〜派遣登録〜マッチングの流れに改善の余地があることが判明した。<br>この課題は、派遣法の改正によって、むしろ悪化の一途を辿っている最中であり、この課題を解決するアプリケーションが未だ存在しないことから、派遣業界に特化した求人SNSを開発することで解決を試みる。
 
-* Database initialization
+# 洗い出した要件
 
-* How to run the test suite
+# 実装した機能についての画像やGIFおよびその説明
 
-* Services (job queues, cache servers, search engines, etc.)
+# 実装予定の機能
 
-* Deployment instructions
+# データベース設計
 
-* ...
+# 画面遷移図
+
+# 開発環境
+
+# ローカルでの動作方法
+
+# 工夫したポイント
