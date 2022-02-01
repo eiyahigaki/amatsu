@@ -11,6 +11,7 @@ amatsuとは、派遣業界に特化した求人SNSである。<br>
 これらの特徴によって、派遣会社の費用を最小限に抑え、<br>売上を最大化することを目的とする。
 
 # URL
+Coming soon
 
 # テスト用アカウント
 - Basic認証パスワード: admin<br>
@@ -46,9 +47,11 @@ amatsuとは、派遣業界に特化した求人SNSである。<br>
 - リクエスト管理
 
 # データベース設計
-
+[![Image from Gyazo](https://i.gyazo.com/e12a17b7a4a327e741cbedf4c26d44f8.png)](https://gyazo.com/e12a17b7a4a327e741cbedf4c26d44f8)
+(随時更新中)
 # 画面遷移図
-
+[![Image from Gyazo](https://i.gyazo.com/7a97aaf6cfeef87133714df9d4af1a54.png)](https://gyazo.com/7a97aaf6cfeef87133714df9d4af1a54)
+(随時更新中)
 # 開発環境
 - フロントエンド:HTML/CSS<br>
 - バックエンド:Ruby/Ruby on Rails<br>
