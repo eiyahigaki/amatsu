@@ -4,8 +4,16 @@ class DeviseCreateAgencies < ActiveRecord::Migration[6.0]
   def change
     create_table :agencies do |t|
       ## Database authenticatable
-      t.string :email,              null: false, default: ""
-      t.string :encrypted_password, null: false, default: ""
+      t.string  :agency_name,        null: false
+      t.string  :agency_president,   null: false
+      t.integer :prefecture_id,      null: false
+      t.string  :city,               null: false
+      t.string  :house_number,       null: false
+      t.string  :building_name,      null: false
+      t.string  :permit_number,      null: false
+      t.string  :website,            null: false
+      t.string  :email,              null: false, default: ""
+      t.string  :encrypted_password, null: false, default: ""
 
       ## Recoverable
       t.string   :reset_password_token
