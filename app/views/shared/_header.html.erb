@@ -1,15 +1,6 @@
-<header class='top-page-header'>
-  <div class='nav'>
-    <ul class='lists-left'>
-    </ul>
-    <ul class='lists-right'>
-      <% if user_signed_in? %>
-        <li><%= link_to current_user.agency_name, "#", class: "agency-name" %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path , method: :delete, class: "logout" %></li>
-      <% else %>
-      <li><%= link_to 'ログイン', new_user_session_path , class: "login" %></li>
-        <li><%= link_to 'agency登録', new_user_registration_path , class: "sign-up" %></li>
-      <% end %>
-    </ul>
-  </div>
-</header>
+<nav class="navbar navbar-light bg-light">
+  <form class="container-fluid justify-content-md-end">
+    <button class="btn btn-outline-success me-2" type="button">ログイン</button>
+    <button class="btn btn-outline-success me-2" type="button">agency登録</button>
+  </form>
+</nav>
