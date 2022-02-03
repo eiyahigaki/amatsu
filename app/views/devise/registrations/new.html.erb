@@ -1,14 +1,14 @@
-<h2 class="d-inline p-2 border border-success text-success d-flex justify-content-center align-items-md-start">Sign up</h2>
+<h2 class="text-success d-flex p-2 justify-content-center">agency登録</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_with model: @agency, url: agency_registration_path, local:true do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
+  <div class="field text-success">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="field">
+  <div class="field text-success">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -16,13 +16,53 @@
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
-  <div class="field">
+  <div class="field text-success">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+    <div class="field text-success">
+    <%= f.label :agency_name, "派遣会社名(貴社)"%><br />
+    <%= f.text_field :agency_name %>
+  </div>
+
+  <div class="field text-success">
+    <%= f.label :agency_president, "代表者名"%><br />
+    <%= f.text_field :agency_president %>
+  </div>
+
+  <div class="field text-success">
+    <%= f.label :prefecture_id, "都道府県"%><br />
+    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}) %>
+  </div>
+
+  <div class="field text-success">
+    <%= f.label :city, "市区町村"%><br />
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="field text-success">
+    <%= f.label :house_number, "番地"%><br />
+    <%= f.text_field :house_number %>
+  </div>
+
+  <div class="field text-success">
+    <%= f.label :building_name, "建物名"%><br />
+    <%= f.text_field :building_name %>
+  </div>
+
+  <div class="field text-success">
+    <%= f.label :permit_number, "許認可番号"%><br />
+    派<%= f.text_field :permit_number %>
+  </div>
+
+  <div class="field text-success">
+    <%= f.label :website, "企業URL"%><br />
+    <%= f.text_field :website %>
+  </div>
+
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "agency登録" %>
   </div>
 <% end %>
 
