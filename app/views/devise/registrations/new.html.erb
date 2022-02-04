@@ -1,68 +1,77 @@
 <h2 class="text-success d-flex p-2 justify-content-center">agency登録</h2>
 
-<%= form_with model: @agency, url: agency_registration_path, local:true do |f| %>
+<%= form_with model: @agency, url: agency_registration_path, class: 'p-5 mb-2 bg-light', local:true do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field text-success">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="mx-auto p-2" style="width: 200px;">
+    <%= f.label :email %>
+    <span class="badge rounded-pill bg-danger">必須</span>
+    <%= f.email_field :email, autofocus: true, class: "border border-2 rounded-3",placeholder:"PC・携帯どちらでも可", autocomplete: "email" %>
   </div>
 
-  <div class="field text-success">
+  <div class="mx-auto p-2" style="width: 200px;">
     <%= f.label :password %>
+    <span class="badge rounded-pill bg-danger">必須</span><br>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, class: "border border-2 rounded-3", placeholder:"6文字以上の半角英数字", autocomplete: "new-password" %>
   </div>
 
-  <div class="field text-success">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  <div class="mx-auto p-2" style="width: 200px;">
+    <%= f.label :password_confirmation %>
+    <span class="badge rounded-pill bg-danger">必須</span>
+    <%= f.password_field :password_confirmation, class: "border border-2 rounded-3", placeholder:"同じパスワードを入力", autocomplete: "new-password" %>
   </div>
 
-    <div class="field text-success">
-    <%= f.label :agency_name, "派遣会社名(貴社)"%><br />
-    <%= f.text_field :agency_name %>
+    <div class="mx-auto p-2" style="width: 200px;">
+    <%= f.label :agency_name, "派遣会社名(貴社)"%>
+    <span class="badge rounded-pill bg-danger">必須</span>
+    <%= f.text_field :agency_name, class: "border border-2 rounded-3", placeholder:"株式会社test" %>
   </div>
 
-  <div class="field text-success">
-    <%= f.label :agency_president, "代表者名"%><br />
-    <%= f.text_field :agency_president %>
+  <div class="mx-auto p-2" style="width: 200px;">
+    <%= f.label :agency_president, "代表者名"%>
+    <span class="badge rounded-pill bg-danger">必須</span>
+    <%= f.text_field :agency_president, class: "border border-2 rounded-3", placeholder:"代表取締役など" %>
   </div>
 
-  <div class="field text-success">
-    <%= f.label :prefecture_id, "都道府県"%><br />
-    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}) %>
+  <div class="mx-auto p-2" style="width: 200px;">
+    <%= f.label :prefecture_id, "都道府県"%>
+    <span class="badge rounded-pill bg-danger">必須</span>
+    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class: "border border-2 rounded-3"}) %>
   </div>
 
-  <div class="field text-success">
-    <%= f.label :city, "市区町村"%><br />
-    <%= f.text_field :city %>
+  <div class="mx-auto p-2" style="width: 200px;">
+    <%= f.label :city, "市区町村"%>
+    <span class="badge rounded-pill bg-danger">必須</span>
+    <%= f.text_field :city, class: "border border-2 rounded-3", placeholder:"渋谷区" %>
   </div>
 
-  <div class="field text-success">
-    <%= f.label :house_number, "番地"%><br />
-    <%= f.text_field :house_number %>
+  <div class="mx-auto p-2" style="width: 200px;">
+    <%= f.label :house_number, "番地"%>
+    <span class="badge rounded-pill bg-danger">必須</span>
+    <%= f.text_field :house_number, class: "border border-2 rounded-3", placeholder:"青山1" %>
   </div>
 
-  <div class="field text-success">
-    <%= f.label :building_name, "建物名"%><br />
-    <%= f.text_field :building_name %>
+  <div class="mx-auto p-2" style="width: 200px;">
+    <%= f.label :building_name, "建物名"%>
+    <%= f.text_field :building_name, class: "border border-2 rounded-3" %>
   </div>
 
-  <div class="field text-success">
-    <%= f.label :permit_number, "許認可番号"%><br />
-    派<%= f.text_field :permit_number %>
+  <div class="mx-auto p-2" style="width: 200px;">
+    <%= f.label :permit_number, "許認可番号"%>
+    <span class="badge rounded-pill bg-danger">必須</span><br>
+    派<%= f.text_field :permit_number, class: "border border-2 rounded-3", placeholder:"00-000000" %>
   </div>
 
-  <div class="field text-success">
-    <%= f.label :website, "企業URL"%><br />
-    <%= f.text_field :website %>
+  <div class="mx-auto p-2" style="width: 200px;">
+    <%= f.label :website, "企業URL"%>
+    <%= f.text_field :website, class: "border border-2 rounded-3", placeholder:"トップページ" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "agency登録" %>
+  <div class="actions d-flex p-2 justify-content-center">
+    <%= f.button "agency登録", class:"btn btn-success" %>
   </div>
 <% end %>
 
