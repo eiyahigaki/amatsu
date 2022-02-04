@@ -45,7 +45,7 @@ RSpec.describe Agency, type: :model do
       it 'prefenture_idが空(id:1)では登録できない' do
         @agency.prefecture_id = 1
         @agency.valid?
-        expect(@agency.errors.full_messages).to include("Prefecture can`t be blank")
+        expect(@agency.errors.full_messages).to include('Prefecture can`t be blank')
       end
       it 'cityが空では登録できない' do
         @agency.city = ''
@@ -82,27 +82,27 @@ RSpec.describe Agency, type: :model do
       it 'passwordが5文字以下では登録できない' do
         @agency.password = 'a1'
         @agency.valid?
-        expect(@agency.errors.full_messages).to include("Password is invalid")
+        expect(@agency.errors.full_messages).to include('Password is invalid')
       end
       it 'passwordが半角英字のみの場合は登録できない' do
         @agency.password = 'aaaaaa'
         @agency.valid?
-        expect(@agency.errors.full_messages).to include("Password is invalid")
+        expect(@agency.errors.full_messages).to include('Password is invalid')
       end
       it 'passwordが半角数字のみの場合は登録できない' do
         @agency.password = '111111'
         @agency.valid?
-        expect(@agency.errors.full_messages).to include("Password is invalid")
+        expect(@agency.errors.full_messages).to include('Password is invalid')
       end
       it 'passwordが全角文字を含む場合は登録できない' do
         @agency.password = '１１１A A A'
         @agency.valid?
-        expect(@agency.errors.full_messages).to include("Password is invalid")
+        expect(@agency.errors.full_messages).to include('Password is invalid')
       end
       it 'permit_numberが半角ハイフンを含んだ正しい形式でないと登録できない' do
         @agency.permit_number = '00000000'
         @agency.valid?
-        expect(@agency.errors.full_messages).to include("Permit number is invalid. Include hyphen(-)")
+        expect(@agency.errors.full_messages).to include('Permit number is invalid. Include hyphen(-)')
       end
     end
   end
