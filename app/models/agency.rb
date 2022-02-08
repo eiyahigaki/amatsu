@@ -16,5 +16,3 @@ class Agency < ApplicationRecord
   VALID＿PASSWORD_REGEX = /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/
   validates :password, format: { with: VALID＿PASSWORD_REGEX }
 end
-
-# メモ
