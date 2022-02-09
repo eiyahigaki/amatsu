@@ -1,0 +1,23 @@
+<%= render "shared/header" %>
+
+<h2 class="text-success d-flex p-2 justify-content-center">案件を出稿する</h2>
+
+<%= form_with model: @jobs, class: 'p-5 mb-2 bg-light', local: true do |f| %>
+
+  <div class="mx-auto p-2" style="width: 200px;">
+  <%= f.label :status, "雇用形態" %>
+  <span class="badge rounded-pill bg-danger">必須</span>
+    <div class="form-check">
+      <%= f.radio_button :status, "一般派遣", class:"form-check-input" %>
+      <%= f.label :statusCheck1, "一般派遣" %>
+    </div>
+    <div class="form-check">
+      <%= f.radio_button :status, "紹介予定派遣", class:"form-check-input" %>
+      <%= f.label :statusCheck2, "紹介予定派遣" %>
+    </div>
+    <div class="form-check">
+      <%= f.radio_button :status, "無期雇用派遣", class:"form-check-input" %>
+      <%= f.label :statusCheck3, "無期雇用派遣" %>
+    </div>
+  </div>
+<% end %>
