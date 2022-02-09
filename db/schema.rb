@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2022_02_09_080029) do
     t.string "title", null: false
     t.integer "occupation_id", null: false
     t.integer "prefecture_id", null: false
-    t.integer "city", null: false
+    t.string "city", null: false
     t.string "house_number", null: false
     t.string "building_name"
     t.integer "line_id", null: false
@@ -45,10 +45,10 @@ ActiveRecord::Schema.define(version: 2022_02_09_080029) do
     t.integer "classification_id", null: false
     t.integer "salary", null: false
     t.integer "period_id", null: false
-    t.integer "start_hour", null: false
-    t.integer "start_minute", null: false
-    t.integer "end_hour", null: false
-    t.integer "end_minute", null: false
+    t.integer "start_hour_id", null: false
+    t.integer "start_minute_id", null: false
+    t.integer "end_hour_id", null: false
+    t.integer "end_minute_id", null: false
     t.string "holiday", null: false
     t.text "descriprion", null: false
     t.bigint "agency_id", null: false
