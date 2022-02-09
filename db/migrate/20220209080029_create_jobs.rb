@@ -4,6 +4,7 @@ class CreateJobs < ActiveRecord::Migration[6.0]
       t.string     :status,            null: false
       t.string     :title,             null: false
       t.integer    :occupation_id,     null: false
+      t.integer    :prefecture_id,     null: false
       t.integer    :city,              null: false
       t.string     :house_number,      null: false
       t.string     :building_name
