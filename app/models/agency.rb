@@ -3,6 +3,7 @@ class Agency < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
+  has_many :jobs
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

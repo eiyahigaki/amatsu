@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_02_142747) do
+ActiveRecord::Schema.define(version: 2022_02_09_080029) do
 
   create_table "agencies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "agency_name", null: false
@@ -32,4 +32,29 @@ ActiveRecord::Schema.define(version: 2022_02_02_142747) do
     t.index ["reset_password_token"], name: "index_agencies_on_reset_password_token", unique: true
   end
 
+  create_table "jobs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "status_id", null: false
+    t.string "title", null: false
+    t.integer "occupaton_id", null: false
+    t.integer "city", null: false
+    t.string "house_number", null: false
+    t.string "building_name"
+    t.integer "line_id", null: false
+    t.integer "station_id", null: false
+    t.integer "classification_id", null: false
+    t.integer "salary", null: false
+    t.integer "period_id", null: false
+    t.integer "start_hour", null: false
+    t.integer "start_minute", null: false
+    t.integer "end_hour", null: false
+    t.integer "end_minute", null: false
+    t.string "holiday", null: false
+    t.text "descriprion", null: false
+    t.bigint "agency_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["agency_id"], name: "index_jobs_on_agency_id"
+  end
+
+  add_foreign_key "jobs", "agencies"
 end
