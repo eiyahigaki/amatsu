@@ -11,6 +11,7 @@ class Job < ApplicationRecord
   belongs_to :start_minute
   belongs_to :end_hour
   belongs_to :end_minute
+  has_one_attached :image
 
   with_options presence: true do
     validates: :title, :city, :house_number, :descirprion
