@@ -82,8 +82,49 @@
   <div class="mx-auto p-2 mb-3" style="width: 600px;">
     <%= f.label :status, "勤務時間", class:"form-label" %>
     <span class="badge rounded-pill bg-danger">必須</span>
-    <%= f.time_field :start_hour %>~<%= f.time_field :end_hour %>
+    <%= f.time_field :start_time %>~<%= f.time_field :end_time %>
   </div>
   
+  <div class="mx-auto p-2 mb-3" style="width: 600px;">
+    休日<span class="badge rounded-pill bg-danger">必須</span><br>
 
+    <div class="form-check form-check-inline">
+      <%= f.check_box :holiday, class:"form-check-input" %>
+      <%= f.label :holiday, "月" %>
+    </div>
+    <div class="form-check form-check-inline">
+      <%= f.check_box :holiday, class:"form-check-input" %>
+      <%= f.label :holiday, "火" %>
+    </div>
+    <div class="form-check form-check-inline">
+      <%= f.check_box :holiday, class:"form-check-input" %>
+      <%= f.label :holiday, "水" %>
+    </div>
+    <div class="form-check form-check-inline">
+      <%= f.check_box :holiday, class:"form-check-input" %>
+      <%= f.label :holiday, "木" %>
+    </div>
+    <div class="form-check form-check-inline">
+      <%= f.check_box :holiday, class:"form-check-input" %>
+      <%= f.label :holiday, "金" %>
+    </div>
+    <div class="form-check form-check-inline">
+      <%= f.check_box :holiday, class:"form-check-input" %>
+      <%= f.label :holiday, "土" %>
+    </div>
+    <div class="form-check form-check-inline">
+      <%= f.check_box :holiday, class:"form-check-input" %>
+      <%= f.label :holiday, "日" %>
+    </div>
+    <div class="form-check form-check-inline">
+      <%= f.check_box :holiday, class:"form-check-input" %>
+      <%= f.label :holiday, "週休二日制(非固定)" %>
+    </div>
+  </div>
+
+  <div class="mx-auto p-2 mb-3" style="width: 600px;">
+    <%= f.label :description, "仕事内容", class:"form-label" %>
+    <span class="badge rounded-pill bg-danger">必須</span>
+    <%= f.text_area :description, size: "70x10", class: "border border-2 rounded-3" %>
+  </div>
 <% end %>
