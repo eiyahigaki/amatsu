@@ -127,4 +127,14 @@
     <span class="badge rounded-pill bg-danger">必須</span>
     <%= f.text_area :description, size: "70x10", class: "border border-2 rounded-3" %>
   </div>
+
+  <div class="mx-auto p-2 mb-3" style="width: 600px;">
+    <%= f.label :description, "お仕事写真", class:"form-label" %>
+    <span class="badge rounded-pill bg-warning">任意</span>
+    <%= f.file_field :image, class: "border border-2 rounded-3" %>
+  </div>
+
+  <div class="actions d-flex p-2 justify-content-center">
+    <%= f.button "出稿する", class:"btn btn-success" %>
+  </div>
 <% end %>
