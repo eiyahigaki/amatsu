@@ -4,22 +4,86 @@
 
 <%= form_with model: @jobs, class: 'p-5 mb-2 bg-light', local: true do |f| %>
 
-  <div class="mx-auto p-2" style="width: 200px;">
-  <%= f.label :status, "雇用形態" %>
-  <span class="badge rounded-pill bg-danger">必須</span>
-    <div class="form-check">
+  <div class="mx-auto p-2 mb-3" style="width: 600px;">
+    雇用形態<span class="badge rounded-pill bg-danger">必須</span>
+
+    <div class="form-check form-check-inline">
       <%= f.radio_button :status, "一般派遣", class:"form-check-input" %>
       <%= f.label :statusCheck1, "一般派遣" %>
     </div>
-    <div class="form-check">
+    <div class="form-check form-check-inline">
       <%= f.radio_button :status, "紹介予定派遣", class:"form-check-input" %>
       <%= f.label :statusCheck2, "紹介予定派遣" %>
     </div>
-    <div class="form-check">
+    <div class="form-check form-check-inline">
       <%= f.radio_button :status, "無期雇用派遣", class:"form-check-input" %>
       <%= f.label :statusCheck3, "無期雇用派遣" %>
     </div>
+    
   </div>
-<% end %>
 
-<%# テスト %>
+  <div class="mx-auto p-2 mb-3" style="width: 600px;">
+    <%= f.label :status, "タイトル", class:"form-label" %>
+    <span class="badge rounded-pill bg-danger">必須</span>
+    <%= f.text_field :title, class:"form-control border border-2 rounded-3", placeholder:"30文字以内" %>
+  </div>
+
+  <div class="mx-auto p-2 mb-3" style="width: 600px;">
+    <%= f.label :status, "職種", class:"form-label" %>
+    <span class="badge rounded-pill bg-danger">必須</span>
+    <%= f.collection_select(:occupation_id, Occupation.all, :id, :name, {}, {class:"border border-2 rounded-3"}) %>
+  </div>
+
+  <div class="mx-auto p-2 mb-3" style="width: 600px;">
+    勤務地<span class="badge rounded-pill bg-danger">必須</span>
+
+    <div class="p-2">
+      <%= f.label :prefecture_id, "都道府県"%>
+      <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class: "border border-2 rounded-3"}) %>
+    </div>
+
+    <div class="p-2">
+      <%= f.label :city, "市区町村"%>
+      <%= f.text_field :city, class: "border border-2 rounded-3", placeholder:"渋谷区" %>
+    </div>
+
+    <div class="p-2">
+      <%= f.label :house_number, "番地"%>
+      <%= f.text_field :house_number, class: "border border-2 rounded-3", placeholder:"青山1" %>
+    </div>
+
+    <div class="p-2">
+      <%= f.label :building_name, "建物名"%>
+      <%= f.text_field :building_name, class: "border border-2 rounded-3", placeholder:"任意" %>
+    </div>
+
+  </div>
+
+  <div class="mx-auto p-2 mb-3" style="width: 600px;">
+    <%= f.label :status, "最寄駅", class:"form-label" %>
+    <span class="badge rounded-pill bg-danger">必須</span>
+    <%= f.collection_select(:line_id, Line.all, :id, :name, {}, {class:"border border-2 rounded-3"}) %>
+    <%= f.collection_select(:station_id, Station.all, :id, :name, {}, {class:"border border-2 rounded-3"}) %>
+  </div>
+
+  <div class="mx-auto p-2 mb-3" style="width: 600px;">
+    <%= f.label :status, "給与", class:"form-label" %>
+    <span class="badge rounded-pill bg-danger">必須</span>
+    <%= f.collection_select(:classification_id, Classification.all, :id, :name, {}, {class:"border border-2 rounded-3"}) %>
+    <%= f.text_field :salary, class:"border border-2 rounded-3" %>
+  </div>
+
+  <div class="mx-auto p-2 mb-3" style="width: 600px;">
+    <%= f.label :status, "契約期間", class:"form-label" %>
+    <span class="badge rounded-pill bg-danger">必須</span>
+    <%= f.collection_select(:period_id, Period.all, :id, :name, {}, {class:"border border-2 rounded-3"}) %>
+  </div>
+
+  <div class="mx-auto p-2 mb-3" style="width: 600px;">
+    <%= f.label :status, "勤務時間", class:"form-label" %>
+    <span class="badge rounded-pill bg-danger">必須</span>
+    <%= f.time_field :start_hour %>~<%= f.time_field :end_hour %>
+  </div>
+  
+
+<% end %>
