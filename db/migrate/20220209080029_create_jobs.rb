@@ -15,7 +15,7 @@ class CreateJobs < ActiveRecord::Migration[6.0]
       t.integer    :period_id,         null: false
       t.time       :start_time,        null: false
       t.time       :end_time,          null: false
-      t.integer    :holiday_id,        null: false
+      t.string     :holiday,           null: false
       t.text       :description,       null: false
       t.references :agency,            null: false, foreign_key: true
       t.timestamps

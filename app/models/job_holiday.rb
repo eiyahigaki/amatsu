@@ -1,2 +1,0 @@
-class JobHoliday < ApplicationRecord
-end
