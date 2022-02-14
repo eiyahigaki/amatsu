@@ -10,10 +10,10 @@ class Job < ApplicationRecord
   has_one_attached :image
 
   with_options presence: true do
-    validates: :city, :house_number, :descirprion, :start_time, :end_time
-    validates: :title, length: { maximum: 30 } 
-    validates: :status, :holiday, acceptance: true
-    validates: :pccupation_id, :prefecture_id, :line_id, :station_id, :classification_id, :period_id, numericality: { other_than: 1, message: 'can`t be blank' }
-    validates: :salary, numericality: { greater_than_or_equal_to: 1041 }
+    validates :city, :house_number, :description, :start_time, :end_time
+    validates :title, length: { maximum: 30 } 
+    validates :status, :holiday, acceptance: true
+    validates :occupation_id, :prefecture_id, :line_id, :station_id, :classification_id, :period_id, numericality: { other_than: 1, message: 'can`t be blank' }
+    validates :salary, numericality: { greater_than_or_equal_to: 1041 }
   end
 end
