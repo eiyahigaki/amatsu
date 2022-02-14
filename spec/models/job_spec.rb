@@ -11,7 +11,7 @@ RSpec.describe Job, type: :model do
         expect(@job).to be_valid
       end
       it 'building_nameが空でも保存できる' do
-        @job.building_name = ""
+        @job.building_name = ''
         expect(@job).to be_valid
       end
     end
@@ -22,7 +22,7 @@ RSpec.describe Job, type: :model do
         expect(@job.errors.full_messages).to include("Status can't be blank")
       end
       it 'titleが空では保存できない' do
-        @job.title = ""
+        @job.title = ''
         @job.valid?
         expect(@job.errors.full_messages).to include("Title can't be blank")
       end
@@ -37,12 +37,12 @@ RSpec.describe Job, type: :model do
         expect(@job.errors.full_messages).to include('Prefecture can`t be blank')
       end
       it 'cityが空では保存できない' do
-        @job.city = ""
+        @job.city = ''
         @job.valid?
         expect(@job.errors.full_messages).to include("City can't be blank")
       end
       it 'house_numberが空では保存できない' do
-        @job.house_number = ""
+        @job.house_number = ''
         @job.valid?
         expect(@job.errors.full_messages).to include("House number can't be blank")
       end
@@ -62,19 +62,19 @@ RSpec.describe Job, type: :model do
         expect(@job.errors.full_messages).to include('Classification can`t be blank')
       end
       it 'salaryが空では保存できない' do
-        @job.salary = ""
+        @job.salary = ''
         @job.valid?
         expect(@job.errors.full_messages).to include("Salary can't be blank")
       end
       it 'salaryが1041以下では保存できない' do
         @job.salary = 1
         @job.valid?
-        expect(@job.errors.full_messages).to include("Salary must be greater than or equal to 1041")
+        expect(@job.errors.full_messages).to include('Salary must be greater than or equal to 1041')
       end
       it 'salaryが文字列を含む場合では保存できない' do
         @job.salary = '文字列'
         @job.valid?
-        expect(@job.errors.full_messages).to include("Salary is not a number")
+        expect(@job.errors.full_messages).to include('Salary is not a number')
       end
       it 'period_idが空(id:1)では保存できない' do
         @job.period_id = 1
@@ -97,7 +97,7 @@ RSpec.describe Job, type: :model do
         expect(@job.errors.full_messages).to include("Holiday can't be blank")
       end
       it 'descriptionが空では保存できない' do
-        @job.description = ""
+        @job.description = ''
         @job.valid?
         expect(@job.errors.full_messages).to include("Description can't be blank")
       end

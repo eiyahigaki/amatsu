@@ -21,7 +21,7 @@ class Station < ActiveHash::Base
     { id: 19, name: '目白駅' },
     { id: 20, name: '池袋駅' },
     { id: 21, name: '大塚駅' },
-    { id: 22, name: '巣鴨駅'},
+    { id: 22, name: '巣鴨駅' },
     { id: 23, name: '駒込駅' },
     { id: 24, name: '田端駅' },
     { id: 25, name: '西日暮里駅' },

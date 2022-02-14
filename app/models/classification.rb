@@ -5,7 +5,7 @@ class Classification < ActiveHash::Base
     { id: 3, name: '日給' },
     { id: 4, name: '月給' },
     { id: 5, name: '年俸' },
-    { id: 6, name: '完全出来高制' } 
+    { id: 6, name: '完全出来高制' }
   ]
 
   include ActiveHash::Associations
