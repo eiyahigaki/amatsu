@@ -14,6 +14,6 @@ class Agency < ApplicationRecord
     validates :permit_number, format: { with: /\A[0-9]{2}-[0-9]{6}\z/, message: 'is invalid. Include hyphen(-)' }
   end
 
-  VALID＿PASSWORD_REGEX = /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/
-  validates :password, format: { with: VALID＿PASSWORD_REGEX }
+  VALID_PASSWORD_REGEX = /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/
+  validates :password, format: { with: VALID_PASSWORD_REGEX }
 end
