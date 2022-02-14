@@ -87,40 +87,8 @@
   </div>
   
   <div class="mx-auto p-2 mb-3" style="width: 600px;">
-    休日<span class="badge rounded-pill bg-danger">必須</span><br>
-
-    <div class="form-check form-check-inline">
-      <%= f.check_box :holiday, class:"form-check-input", checked_value: "月" %>
-      <%= f.label :holiday, "月" %>
-    </div>
-    <div class="form-check form-check-inline">
-      <%= f.check_box :holiday, class:"form-check-input", checked_value: "火" %>
-      <%= f.label :holiday, "火" %>
-    </div>
-    <div class="form-check form-check-inline">
-      <%= f.check_box :holiday, class:"form-check-input", checked_value: "水" %>
-      <%= f.label :holiday, "水" %>
-    </div>
-    <div class="form-check form-check-inline">
-      <%= f.check_box :holiday, class:"form-check-input", checked_value: "木" %>
-      <%= f.label :holiday, "木" %>
-    </div>
-    <div class="form-check form-check-inline">
-      <%= f.check_box :holiday, class:"form-check-input", checked_value: "金" %>
-      <%= f.label :holiday, "金" %>
-    </div>
-    <div class="form-check form-check-inline">
-      <%= f.check_box :holiday, class:"form-check-input", checked_value: "土" %>
-      <%= f.label :holiday, "土" %>
-    </div>
-    <div class="form-check form-check-inline">
-      <%= f.check_box :holiday, class:"form-check-input", checked_value: "日" %>
-      <%= f.label :holiday, "日" %>
-    </div>
-    <div class="form-check form-check-inline">
-      <%= f.check_box :holiday, class:"form-check-input", checked_value: "週休二日制(非固定)" %>
-      <%= f.label :holiday, "週休二日制(非固定)" %>
-    </div>
+    休日<span class="badge rounded-pill bg-danger">必須</span>
+    <%= f.collection_check_boxes(:holiday_id, Holiday.all, :id, :name, {}, {class:"border border-2 rounded-3"}) %>
   </div>
 
   <div class="mx-auto p-2 mb-3" style="width: 600px;">

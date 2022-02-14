@@ -66,9 +66,9 @@ ActiveRecord::Schema.define(version: 2022_02_09_111611) do
     t.integer "classification_id", null: false
     t.integer "salary", null: false
     t.integer "period_id", null: false
-    t.integer "start_time", null: false
-    t.integer "end_time", null: false
-    t.string "holiday", null: false
+    t.time "start_time", null: false
+    t.time "end_time", null: false
+    t.integer "holiday_id", null: false
     t.text "description", null: false
     t.bigint "agency_id", null: false
     t.datetime "created_at", precision: 6, null: false

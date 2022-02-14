@@ -7,10 +7,12 @@ class Job < ApplicationRecord
   belongs_to :station
   belongs_to :classification
   belongs_to :period
+  has_many   :job_holidays
+  has_many   :holidays, through: :job_holidays
   has_one_attached :image
 
   with_options presence: true do
-    validates :city, :house_number, :description, :start_time, :end_time, :status, :holiday
+    validates :city, :house_number, :description, :start_time, :end_time, :status, :holiday_id
     validates :title, length: { maximum: 30 } 
     validates :occupation_id, :prefecture_id, :line_id, :station_id, :classification_id, :period_id, numericality: { other_than: 1, message: 'can`t be blank' }
     validates :salary, numericality: { greater_than_or_equal_to: 1041 }
