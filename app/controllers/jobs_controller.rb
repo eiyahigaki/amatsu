@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
-  before_action :holiday_string, only: :create
+  before_action :authenticate_agency!, only: [:new]
+  before_action :holiday_string, only: [:create]
 
   def index
   end
