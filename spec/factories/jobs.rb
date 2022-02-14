@@ -14,7 +14,7 @@ FactoryBot.define do
     association :agency
 
     Faker::Config.locale = 'ja'
-    title  {Faker::Job.title}
+    title  {Faker::Lorem.characters(number: 10)}
     city   {Faker::Address.city}
     house_number {Faker::Address.street_name}
     building_name {Faker::Address.street_address}
