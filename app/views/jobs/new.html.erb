@@ -3,7 +3,7 @@
 <h2 class="text-success d-flex p-2 justify-content-center">案件を出稿する</h2>
 
 <%= form_with model: @job, class: 'p-5 mb-2 bg-light', local: true do |f| %>
-<%# <%= render 'shared/error_messages', model: f.object %>
+  <%= render 'shared/error_messages', model: f.object %>
 
   <div class="mx-auto p-2 mb-3" style="width: 600px;">
     雇用形態<span class="badge rounded-pill bg-danger">必須</span>

@@ -20,7 +20,9 @@ class JobsController < ApplicationController
 
   private
   def holiday_string
-    params[:job][:holiday] = params[:job][:holiday].join("/")
+    if params[:job][:holiday].present?
+      params[:job][:holiday] = params[:job][:holiday].join("/")
+    end
   end
 
   def job_params
