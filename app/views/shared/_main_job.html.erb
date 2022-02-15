@@ -27,8 +27,28 @@
           
             <%# jobカード %>
             <div class="card col-12">
+              
+              <%# お仕事写真 %>
               <%= image_tag job.image, class: "card-img-top" if job.image.attached? %>
+              <%# お仕事写真 %>
+
+              <%# statusバッジ %>
               <div class="card-body">
+                <% if job.status == "一般派遣" %>
+                  <span class="badge rounded-pill bg-warning text-dark">
+                    <%= job.status %>
+                  </span>
+                <% elsif job.status == "紹介予定派遣" %>
+                  <span class="badge rounded-pill bg-info text-dark">
+                    <%= job.status %>
+                  </span>
+                <% else %>
+                  <span class="badge rounded-pill bg-light text-dark">
+                    <%= job.status %>
+                  </span>
+                <% end %>
+                <%# statusバッジ %>
+
                 <h5 class="card-title"><%= job.title %></h5>
                 <p class="card-text"><%= job.description %></p>
               </div>
