@@ -1,10 +1,8 @@
-window.addEventListener('load', () => {
+window.addEventListener('load', function(){
   const titleInput = document.getElementById("job_title");
-  const characterCount = document.getElementById("character_count");
+  const characterCount = document.getElementById("character-count");
 
   titleInput.addEventListener("input", () => {
-    const titleCount = titleInput.length;
-    console.log(titleCount);
-    // characterCount.innerHTML = titleCount;  
+    characterCount.innerHTML = titleInput.value.length;
   });
 });
