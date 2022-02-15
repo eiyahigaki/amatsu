@@ -1,17 +1,17 @@
 <nav class="navbar navbar-light bg-light">
   <form class="container-fluid justify-content-md-end">
     <% if agency_signed_in? %>
-      <button class="btn btn-outline-success me-2" type="button">
+      <button class="btn btn-outline-success me-2">
         <%= link_to current_agency.agency_name, "#", class: "login text-reset text-decoration-none" %>
       </button>
-      <button class="btn btn-outline-success me-2" type="button">
+      <button class="btn btn-outline-success me-2">
         <%= link_to 'ログアウト', destroy_agency_session_path, method: :delete, class: "sign_up text-reset text-decoration-none" %>
       </button>
     <% else %>
-      <button class="btn btn-outline-success me-2" type="button">
+      <button class="btn btn-outline-success me-2">
         <%= link_to 'ログイン', new_agency_session_path, class: "text-reset text-decoration-none" %>
       </button>
-      <button class="btn btn-outline-success me-2" type="button">
+      <button class="btn btn-outline-success me-2">
         <%= link_to 'agency登録', new_agency_registration_path, class: "text-reset text-decoration-none" %>
       </button>
     <% end %>

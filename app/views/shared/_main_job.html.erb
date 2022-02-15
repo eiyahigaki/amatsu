@@ -26,20 +26,23 @@
           <p>新着のお仕事が出ました!</p>
           
             <%# jobカード %>
-            <div class="card" style="width: 18rem;">
+            <div class="card col-12">
               <%= image_tag job.image, class: "card-img-top" if job.image.attached? %>
               <div class="card-body">
                 <h5 class="card-title"><%= job.title %></h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text"><%= job.description %></p>
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
+                <li class="list-group-item"><%= job.occupation_id %></li>
+                <li class="list-group-item"><%= job.city %>/<%= job.station_id %></li>
               </ul>
-              <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+              <div class="card-body gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-outline-warning">
+                  <%= link_to 'キープする', "#", class: "text-reset text-decoration-none" %>
+                </button>
+                <button class="btn btn-warning">
+                  <%= link_to '詳しく見る', "#", class: "text-reset text-decoration-none" %>
+                </button>
               </div>             
           </div>
           <%# jobカード %>
