@@ -23,11 +23,19 @@
     
   </div>
 
+  <%# タイトル %>
   <div class="mx-auto p-2 mb-3" style="width: 600px;">
+
     <%= f.label :status, "タイトル", class:"form-label" %>
     <span class="badge rounded-pill bg-danger">必須</span>
     <%= f.text_field :title, class:"form-control border border-2 rounded-3", placeholder:"30文字以内" %>
+
+    <p class="d-flex justify-content-end">
+      <span id="character_count"></span>/30
+    </p>
+
   </div>
+  <%# タイトル %>
 
   <div class="mx-auto p-2 mb-3" style="width: 600px;">
     <%= f.label :occupation_id, "職種", class:"form-label" %>
