@@ -3,6 +3,7 @@ class JobsController < ApplicationController
   before_action :holiday_string, only: [:create]
 
   def index
+    @job = Job.includes(:agency).order('created_at DESC')
   end
 
   def new
