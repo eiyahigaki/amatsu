@@ -1,6 +1,10 @@
-<nav class="navbar navbar-light bg-light">
-  <i class="bi bi-house"></i>
-  <form class="container-fluid justify-content-md-end">
+<nav class="navbar navbar-light bg-light container-fluid justify-content-between">
+  <%= link_to(root_path) do %>
+    <i class="bi bi-house text-success p-2" style="font-size: 2rem;"></i>
+  <% end %>
+
+  <%# ログイン/新規登録ボタンの設置 %>
+  <div>
     <% if agency_signed_in? %>
       <button class="btn btn-outline-success me-2">
         <%= link_to current_agency.agency_name, "#", class: "login text-reset text-decoration-none" %>
@@ -16,5 +20,7 @@
         <%= link_to 'agency登録', new_agency_registration_path, class: "text-reset text-decoration-none" %>
       </button>
     <% end %>
-  </form>
+  </div>
+  <%# ログイン/新規登録ボタンの設置 %>
+  
 </nav>
