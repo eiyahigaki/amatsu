@@ -19,6 +19,11 @@ class JobsController < ApplicationController
     end
   end
 
+  def show
+    @job = Job.includes(:agency).order('created_at DESC')
+    @job_show =  Job.find(params[:id])
+  end
+
   private
 
   def holiday_string
