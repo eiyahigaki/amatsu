@@ -17,11 +17,34 @@
       <%= image_tag @job_show.image, class: "card-img-top"%>
       <%# お仕事写真 %>
 
+      <%# statusバッジ %>
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <% if @job_show.status == "一般派遣" %>
+          <span class="badge rounded-pill bg-warning text-dark">
+            <%= @job_show.status %>
+          </span>
+        <% elsif @job_show.status == "紹介予定派遣" %>
+          <span class="badge rounded-pill bg-info text-dark">
+            <%= @job_show.status %>
+          </span>
+        <% else %>
+          <span class="badge rounded-pill bg-light text-dark">
+            <%= @job_show.status %>
+          </span>
+        <% end %>
+        <%# statusバッジ %>
+
+        <h5 class="card-title"><%= @job_show.title %></h5>
+        <p class="card-text"><%= @job_show.description %></p>
       </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><%= @job_show.occupation.name %></li>
+        <li class="list-group-item"><%= @job_show.prefecture.name %><%= @job_show.city %>/<%= @job_show.station.name %></li>
+        <li class="list-group-item"><%= @job_show.classification.name %><%= @job_show.salary %>円</li>
+        <li class="list-group-item">勤務期間:<%= @job_show.period.name %></li>
+        <li class="list-group-item">勤務時間:<%= @job_show.start_time %><%= @job_show.end_time %></li>
+        <li class="list-group-item">休日:<%= @job_show.holiday %></li>
+      </ul>
     </div>
     <%# jobカード %>
 </div>
