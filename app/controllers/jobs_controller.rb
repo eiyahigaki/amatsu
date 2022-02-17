@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
-  before_action :authenticate_agency!, only: [:new]
+  before_action :authenticate_agency!, only: [:new, :edit]
   before_action :holiday_string, only: [:create]
+  before_action :move_to_index, only: [:edit]
 
   def index
     @job = Job.includes(:agency).order('created_at DESC')
@@ -46,5 +47,10 @@ class JobsController < ApplicationController
   def job_params
     params.require(:job).permit(:image, :status, :title, :occupation_id, :prefecture_id, :city, :house_number, :building_name,
                                 :line_id, :station_id, :classification_id, :salary, :period_id, :start_time, :end_time, :description, :holiday).merge(agency_id: current_agency.id)
+  end
+
+  def move_to_index
+    @job = Job.find(params[:id])
+    redirect_to action: :index unless current_agency.id == @job.agency_id
   end
 end
