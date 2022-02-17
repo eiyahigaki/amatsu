@@ -15,7 +15,9 @@
         <li>
           <%= link_to '編集する', edit_job_path(@job_show.id), class: "dropdown-item" %>
         </li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li>
+          <%= link_to '削除する', job_path(@job_show.id), method: :delete, class: "dropdown-item" %>
+        </li>
       </ul>
     </div>
   </div>

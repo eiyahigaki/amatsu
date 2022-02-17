@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
-  before_action :authenticate_agency!, only: [:new, :edit]
+  before_action :authenticate_agency!, only: [:new, :edit, :destroy]
   before_action :holiday_string, only: [:create]
-  before_action :move_to_index, only: [:edit]
+  before_action :move_to_index, only: [:edit, :destroy]
 
   def index
     @job = Job.includes(:agency).order('created_at DESC')
@@ -36,6 +36,12 @@ class JobsController < ApplicationController
   def show
     @job = Job.includes(:agency).order('created_at DESC')
     @job_show =  Job.find(params[:id])
+  end
+
+  def destroy
+    @job = Job.find(params[:id])
+    @job.destroy
+    redirect_to root_path
   end
 
   private
