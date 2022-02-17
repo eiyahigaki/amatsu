@@ -10,7 +10,7 @@
   <div>
     <% if agency_signed_in? %>
       <button class="btn btn-outline-success me-2">
-        <%= link_to current_agency.agency_name, "#", class: "login text-reset text-decoration-none" %>
+        <%= link_to current_agency.agency_name, agency_path(current_agency.id), class: "login text-reset text-decoration-none" %>
       </button>
       <button class="btn btn-outline-success me-2">
         <%= link_to 'ログアウト', destroy_agency_session_path, method: :delete, class: "sign_up text-reset text-decoration-none" %>
