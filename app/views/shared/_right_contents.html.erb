@@ -8,6 +8,16 @@
     <%# ロゴ(Bootstrap使用中) %>
 
     <h4><%= @job_show.agency.agency_name %></h4>
+
+    <div class="dropdown ms-auto p-2">
+      <i class="bi bi-three-dots dropdown-toggle" data-bs-toggle="dropdown"></i>
+      <ul class="dropdown-menu">
+        <li>
+          <%= link_to '編集する', edit_job_path(@job_show.id), class: "dropdown-item" %>
+        </li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+      </ul>
+    </div>
   </div>
 
     <%# jobカード %>
