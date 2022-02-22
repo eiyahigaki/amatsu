@@ -3,3 +3,4 @@ class AgenciesController < ApplicationController
     @agency = Agency.find(params[:id])
   end
 end
+  
