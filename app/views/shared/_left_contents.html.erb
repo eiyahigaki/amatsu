@@ -57,8 +57,10 @@
     </li>
   <% end %>
 
-  <button type="button" class="btn btn-outline-success rounded-circle position-fixed bottom-0 end-50 p-4">
-    <%= link_to '出稿', new_job_path, class: "text-reset text-decoration-none" %>
-  </button>
+<%# 出稿ボタンの設置 %>
+  <%= link_to(new_job_path) do %>
+    <i class="bi bi-file-earmark-plus-fill text-success position-fixed bottom-0 end-50 p-4 display-1 d-inline-block" tabindex="0" data-bs-toggle="tooltip" title="案件を出稿する"></i>
+  <% end %>
+<%# 出稿ボタンの設置 %>
 </ul>
 <%# jobs一覧ページ %>
