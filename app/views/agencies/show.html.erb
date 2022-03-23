@@ -3,14 +3,19 @@
 <div class="card w-75 m-auto">
   <%= image_tag "/assets/amatsu-header01.jpg", class:"card-img-top img-fluid", alt:"ヘッダー画像" %>
   <div class="card-img-overlay">
-    <h1 class="card-title">No image</h1>
+    <h1 class="card-title text-light d-flex justify-content-center">No image</h1>
   </div>
-  <div class="card-body">
-    <h5 class="card-title"><%= @agency.agency_name %></h5>
-    <p class="card-text">代表者名:<%= @agency.agency_president %></p>
-    <p class="card-text">住所:<%= @agency.prefecture.name %><%= @agency.city %><%= @agency.house_number %><%= @agency.building_name %></p>
-    <p class="card-text">派遣許認可番号:派<%= @agency.permit_number %></p>
-    <p class="card-text">Website:<%= @agency.website %></p>
-    <a href="#" class="btn btn-success"><%= "agency情報を編集" %></a>
+  <div class="d-flex">
+    <div>
+      <i class="bi bi-person-circle d-flex justify-content-center"></i><br/>
+      <a href="#" class="btn btn-success"><%= "agency情報を編集" %></a>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= @agency.agency_name %></h5>
+      <p class="card-text"><%= "代表者名:" %><%= @agency.agency_president %></p>
+      <p class="card-text"><%= "住所:" %><%= @agency.prefecture.name %><%= @agency.city %><%= @agency.house_number %><%= @agency.building_name %></p>
+      <p class="card-text"><%= "派遣許認可番号:派" %><%= @agency.permit_number %></p>
+      <p class="card-text"><%= "Website:" %><%= @agency.website %></p>
+    </div>
   </div>
 </div>
