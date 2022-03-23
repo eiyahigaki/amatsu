@@ -7,7 +7,10 @@
   </div>
   <div class="card-body">
     <h5 class="card-title"><%= @agency.agency_name %></h5>
-    <p class="card-text"><%= @agency.agency_name %></p>
+    <p class="card-text">代表者名:<%= @agency.agency_president %></p>
+    <p class="card-text">住所:<%= @agency.prefecture.name %><%= @agency.city %><%= @agency.house_number %><%= @agency.building_name %></p>
+    <p class="card-text">派遣許認可番号:派<%= @agency.permit_number %></p>
+    <p class="card-text">Website:<%= @agency.website %></p>
     <a href="#" class="btn btn-primary"><%= @agency.agency_name %></a>
   </div>
 </div>
